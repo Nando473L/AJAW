@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Administración</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Arsha Template CSS -->
+  <link rel="stylesheet" href="https://bootstrapmade.com/demo/templates/Arsha/assets/css/style.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header id="header">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="#" class="logo">
+          <img src="/public/css/logo.png" alt="AJAW Brand" width="150" height="75" class="animate__animated animate__fadeInLeft">
+        </a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('poliza-mantenimiento')"><i class="fas fa-tools"></i> Póliza de Mantenimiento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('acerca-de-nosotros')"><i class="fas fa-info-circle"></i> Acerca de Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('servicios')"><i class="fas fa-concierge-bell"></i> Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('productos')"><i class="fas fa-box"></i> Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://qro.ajaw.com.mx/erp" target="_blank"><i class="fas fa-desktop"></i> ERP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('nueva-pagina')"><i class="fas fa-file-alt"></i> Nueva Página</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary" href="/logout" role="button">
+                  <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main id="main" class="py-5">
+    <section id="poliza-mantenimiento" class="container section-content" style="display: block;">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="content">
+            <h2><i class="fas fa-tools mr-2"></i> Póliza de Mantenimiento</h2>
+            <p>En AJAW nos comprometemos a ofrecer la mejor atención para el mantenimiento de sus equipos e instalaciones. Nuestra póliza de mantenimiento incluye los siguientes servicios:</p>
+            <ul>
+              <li>Revisión periódica de equipos para prevenir fallos.</li>
+              <li>Asistencia técnica en caso de averías.</li>
+              <li>Reemplazo de piezas defectuosas.</li>
+              <li>Actualizaciones de software y firmware.</li>
+              <li>Informe detallado de las intervenciones realizadas.</li>
+            </ul>
+            <p>Contacte con nuestro equipo para más detalles sobre la póliza y cómo puede beneficiarse de ella.</p>
+            <!-- Botones AJAW Basic y AJAW Plus -->
+            <div class="btn-group" role="group" aria-label="Opciones de Póliza">
+              <button type="button" class="btn btn-primary" onclick="showPlan('basic')">AJAW Basic</button>
+              <button type="button" class="btn btn-secondary" onclick="showPlan('plus')">AJAW Plus</button>
+            </div>
+            <!-- Información de los planes -->
+            <div id="plan-info" class="mt-4">
+              <div id="basic-info" class="plan-info" style="display: none;">
+                <h3>AJAW Basic</h3>
+                <p>El plan AJAW Basic ofrece una cobertura esencial para el mantenimiento de sus equipos, que incluye:</p>
+                <ul>
+                  <li>Revisión básica de equipos.</li>
+                  <li>Soporte técnico durante el horario laboral.</li>
+                  <li>Actualizaciones estándar de software.</li>
+                </ul>
+              </div>
+              <div id="plus-info" class="plan-info" style="display: none;">
+                <h3>AJAW Plus</h3>
+                <p>El plan AJAW Plus proporciona una cobertura completa para el mantenimiento de sus equipos, que incluye:</p>
+                <ul>
+                  <li>Revisión completa de equipos.</li>
+                  <li>Soporte técnico 24/7.</li>
+                  <li>Actualizaciones avanzadas de software y firmware.</li>
+                  <li>Reemplazo prioritario de piezas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img src="ruta-a-tu-imagen.jpg" alt="Imagen relacionada" class="img-fluid">
+        </div>
+      </div>
+    </section>
+
+    <section id="acerca-de-nosotros" class="container section-content" style="display: none;">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="content">
+            <h2><i class="fas fa-info-circle mr-2"></i> Acerca de Nosotros</h2>
+            <p>AJAW se concentra en la relación con empresas (B2B) para poder potenciar y enfocar la experiencia de más de dos décadas en el sector HORECA con funciones específicas aplicando realmente Ingeniería en el sector.
+              Es por esto que el generar alianzas estratégicas con socios de negocio y socios comerciales, nos distinguen en el medio debido a factores principales que se buscan en la relación:
+              Lealtad, Honestidad y Profesionalismo.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img src="ruta-a-tu-imagen.jpg" alt="Imagen relacionada" class="img-fluid">
+        </div>
+      </div>
+
+      <!-- Mapa de Google Maps -->
+      <div class="row mt-4">
+        <div class="col-lg-12">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3735.6382138865524!2d-100.36183832567461!3d20.561978503648913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d344998c000001%3A0x1ae1ce97a247ae16!2sAJAW%20L%C3%ADder%20en%20Ingenier%C3%ADa!5e0!3m2!1ses-419!2smx!4v1723176885778!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="container section-content" style="display: none;">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="content">
+            <h2><i class="fas fa-concierge-bell mr-2"></i> Servicios</h2>
+            <p>En AJAW, ofrecemos una amplia gama de servicios para cubrir todas las necesidades de nuestros clientes en el sector HORECA. Nuestros servicios incluyen:</p>
+            <ul>
+              <li>Asesoría técnica especializada.</li>
+              <li>Instalación y mantenimiento de equipos.</li>
+              <li>Capacitación y soporte técnico.</li>
+              <li>Desarrollo de soluciones personalizadas.</li>
+              <li>Gestión integral de proyectos.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img src="ruta-a-tu-imagen.jpg" alt="Imagen relacionada" class="img-fluid">
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="container section-content" style="display: none;">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="content">
+            <h2><i class="fas fa-box mr-2"></i> Productos</h2>
+            <p>Nuestros productos están diseñados para satisfacer las necesidades más exigentes de nuestros clientes en el sector HORECA. Ofrecemos:</p>
+            <ul>
+              <li>Equipos de alta calidad para cocinas industriales.</li>
+              <li>Soluciones tecnológicas para la gestión de establecimientos.</li>
+              <li>Herramientas especializadas para optimizar procesos.</li>
+              <li>Repuestos y accesorios originales.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img src="ruta-a-tu-imagen.jpg" alt="Imagen relacionada" class="img-fluid">
+        </div>
+      </div>
+    </section>
+
+    <section id="nueva-pagina" class="container section-content" style="display: none;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2><i class="fas fa-file-alt mr-2"></i> Nueva Página</h2>
+          <p>Contenido para la nueva página. Aquí puedes añadir el contenido que desees.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; 2024 AJAW</small>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script>
+    function showSection(sectionId) {
+      // Ocultar todas las secciones
+      document.querySelectorAll('.section-content').forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      // Mostrar la sección seleccionada
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function showPlan(planId) {
+      // Ocultar todas las informaciones de planes
+      document.querySelectorAll('.plan-info').forEach(function(info) {
+        info.style.display = 'none';
+      });
+
+      // Mostrar la información del plan seleccionada
+      document.getElementById(planId + '-info').style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>

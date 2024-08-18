@@ -4,8 +4,20 @@ const path = require("path");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const dotenv = require("dotenv");
+const admin = require("firebase-admin");
 
+// Cargar variables de entorno
 dotenv.config({ path: "./env/.env" });
+
+// Inicializar Firebase
+const serviceAccount = require('./ajaw-7d954-firebase-adminsdk-sx8cm-ec78987eb8.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://your-database-name.firebaseio.com'
+});
+
+const db = admin.firestore();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -21,8 +33,6 @@ app.use(
     saveUninitialized: true,
   })
 );
-
-const connection = require("./database/db");
 
 // Middleware para proteger rutas de acceso
 const authMiddleware = (req, res, next) => {
@@ -46,7 +56,6 @@ app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "register.html")); // Página de registro
 });
 
-
 app.get("/cliente", authMiddleware, (req, res) => {
   if (req.session.isCliente) {
     res.sendFile(path.join(__dirname, "cliente.html")); // Página del cliente
@@ -66,39 +75,45 @@ app.get("/admin", authMiddleware, (req, res) => {
 // Ruta para el registro
 app.post("/register", async (req, res) => {
   const { username, name, role, password } = req.body;
-  let passwordHash = await bcrypt.hash(password, 8);
-  connection.query(
-    "INSERT INTO users SET ?",
-    { username, name, role, password: passwordHash },
-    (error, results) => {
-      if (error) {
-        console.log(error);
-        res.send("Error en el registro");
-      } else {
-        res.redirect("/login");
-      }
-    }
-  );
+
+  try {
+    // Hashear la contraseña
+    let passwordHash = await bcrypt.hash(password, 8);
+
+    // Guardar el nuevo usuario en Firestore
+    await db.collection('users').doc(username).set({
+      username: username,
+      name: name,
+      role: role,
+      password: passwordHash
+    });
+
+    // Redirigir al usuario a la página de login después de un registro exitoso
+    res.redirect("/login");
+
+  } catch (error) {
+    console.error('Error al registrar el usuario:', error);
+    res.send("Error en el registro");
+  }
 });
 
 // Ruta para el login
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   if (username && password) {
-    connection.query(
-      "SELECT * FROM users WHERE username = ?",
-      [username],
-      async (error, results, fields) => {
-        if (
-          results.length == 0 ||
-          !(await bcrypt.compare(password, results[0].password))
-        ) {
+    try {
+      const userDoc = await db.collection('users').doc(username).get();
+      if (!userDoc.exists) {
+        res.send("Usuario y/o contraseña incorrectos");
+      } else {
+        const userData = userDoc.data();
+        if (!(await bcrypt.compare(password, userData.password))) {
           res.send("Usuario y/o contraseña incorrectos");
         } else {
           req.session.loggedin = true;
-          req.session.name = results[0].name;
-          req.session.isAdmin = results[0].role === "admin";
-          req.session.isCliente = results[0].role === "cliente";
+          req.session.name = userData.name;
+          req.session.isAdmin = userData.role === "admin";
+          req.session.isCliente = userData.role === "cliente";
 
           if (req.session.isAdmin) {
             res.redirect("/admin");
@@ -107,7 +122,10 @@ app.post("/login", async (req, res) => {
           }
         }
       }
-    );
+    } catch (error) {
+      console.error('Error al autenticar el usuario:', error);
+      res.send("Error en el login");
+    }
   } else {
     res.send("Por favor ingresa usuario y contraseña");
   }

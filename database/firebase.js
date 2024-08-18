@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('../ajaw-7d954-firebase-adminsdk-sx8cm-ec78987eb8.json');
+const serviceAccount = require('../.vscode/ajaw-7d954-firebase-adminsdk-sx8cm-ec78987eb8.json');
 
 // Inicializar la app de Firebase con las credenciales
 admin.initializeApp({

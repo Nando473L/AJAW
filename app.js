@@ -10,7 +10,7 @@ const admin = require("firebase-admin");
 dotenv.config({ path: "./env/.env" });
 
 // Inicializar Firebase
-const serviceAccount = require('./ajaw-7d954-firebase-adminsdk-sx8cm-ec78987eb8.json');
+const serviceAccount = require('./.vscode/ajaw-7d954-firebase-adminsdk-sx8cm-ec78987eb8.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

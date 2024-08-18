@@ -1,0 +1,237 @@
+/* Establece la fuente de texto para todo el documento */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
+  text-align: center; /* Alinea el texto al centro */
+  background-image: url("https://img.freepik.com/fotos-premium/fondo-negro-ola-blanca-medio_739292-9904.jpg"); /* Fondo con imagen */
+  background-size: cover; /* Cubre toda el área del fondo */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat; /* No repite la imagen de fondo */
+  color: #fff; /* Color de texto blanco */
+  position: relative; /* Asegura que los elementos dentro de body se posicionen en relación con él */
+  min-height: 100vh; /* Asegura que el body cubra al menos el alto de la pantalla */
+}
+
+/* Estilo de la imagen de fondo (elimina si ya no es necesario) */
+.background-image {
+  display: none; /* Oculta la imagen de fondo si se usa la imagen de fondo en body */
+}
+
+/* Estilos para los contenedores */
+.login-form,
+.contenedor,
+.register-form {
+  width: 300px; /* Ancho del contenedor */
+  margin: 20px auto; /* Centra horizontalmente y añade un margen superior e inferior */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(173, 182, 241, 0.1); /* Sombra */
+  background: linear-gradient(to bottom right, rgba(23, 29, 221, 0.8), rgba(45, 60, 201, 0.5)); /* Fondo con degradado negro */
+}
+
+/* Estilos para los encabezados dentro de los contenedores */
+.login-form h1,
+.contenedor h1,
+.register-form h1 {
+  text-align: center; /* Alinea el texto al centro */
+  color: #ffffff; /* Color de texto blanco */
+  font-size: 28px; /* Tamaño de fuente */
+  padding: 20px 0; /* Espaciado interno arriba y abajo */
+}
+
+/* Estilos para los campos de entrada dentro de los contenedores */
+.login-form input[type="password"],
+.login-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="text"] {
+  width: 100%; /* Ancho completo */
+  padding: 15px; /* Espaciado interno */
+  border: 1px solid #1d4ed8; /* Borde azul */
+  margin-bottom: 10px; /* Margen inferior */
+  box-sizing: border-box; /* Caja de borde que incluye el relleno */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para los botones */
+.btn-facebook-btn,
+.btn-login,
+.btn-register,
+.btn-cancel,
+.btn-save,
+.a-login,
+.a-logout {
+  width: 100%; /* Ancho completo */
+  padding: 10px 20px; /* Espaciado interno (10px arriba y abajo, 20px a los lados) */
+  border: 0; /* Sin borde */
+  box-sizing: border-box; /* Caja de borde que incluye el relleno */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  font-weight: bold; /* Texto en negrita */
+  font-size: large; /* Tamaño de fuente grande */
+  color: #ffffff; /* Color de texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Establece el color de fondo azul para los botones */
+.btn-login,
+.btn-register,
+.a-login,
+.a-logout {
+  background-color: #1d4ed8; /* Color de fondo azul */
+}
+
+/* Estilos para los botones dentro del formulario de registro de usuario */
+.register-form .btn-cancel,
+.register-form .btn-save {
+  width: calc(50% - 10px); /* Ancho del 50% menos 10px para el margen */
+  padding: 10px; /* Espaciado interno */
+  border: 0; /* Sin borde */
+  box-sizing: border-box; /* Caja de borde que incluye el relleno */
+  cursor: pointer; /* Cambia el cursor a una mano */
+  font-weight: bold; /* Texto en negrita */
+  font-size: large; /* Tamaño de fuente grande */
+  color: #ffffff; /* Color de texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-right: 20px; /* Margen derecho */
+}
+
+/* Estilos para el botón Cancel */
+.register-form .btn-cancel {
+  background-color: #1d4ed8; /* Color de fondo azul */
+}
+
+/* Estilos para el botón Save */
+.register-form .btn-save {
+  background-color: #1d4ed8; /* Color de fondo azul */
+}
+
+/* Estilos para los botones cuando están en hover o active */
+.btn-login:hover,
+.btn-login:active,
+.btn-register:hover,
+.btn-register:active,
+.btn-cancel:hover,
+.btn-cancel:active,
+.btn-save:hover,
+.btn-save:active,
+.a-login:hover,
+.a-login:active,
+.a-logout:hover,
+.a-logout:active {
+  filter: brightness(90%); /* Reduce el brillo del botón */
+}
+
+/* Estilos para los botones cuando están enfocados */
+.btn-login:focus,
+.btn-register:focus,
+.btn-cancel:focus,
+.btn-save:focus,
+.a-login:focus,
+.a-logout:focus {
+  box-shadow: 0 0 0 3px rgba(121, 82, 179, 0.25); /* Sombra cuando está enfocado */
+}
+
+/* Estilos para el formulario de registro de usuario */
+.register-form {
+  width: 400px; /* Ancho del formulario de registro */
+  margin: 20px auto; /* Centra horizontalmente y añade un margen superior e inferior */
+  padding: 20px; /* Espaciado interno */
+  font-family: Roboto; /* Fuente Roboto */
+  text-align: left !important; /* Alineación del texto a la izquierda */
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22); /* Sombra */
+  background: linear-gradient(to bottom right, rgba(23, 29, 221, 0.8), rgba(45, 60, 201, 0.5)); /* Fondo con degradado */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para los encabezados en el formulario de registro */
+.register-form h1 {
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: #ffffff; /* Color del texto blanco */
+  font-size: 22px; /* Tamaño de fuente */
+  padding: 20px 0 10px 0; /* Espaciado interno */
+}
+
+/* Estilos para los campos de entrada en el formulario de registro */
+.register-form input[type="password"],
+.register-form input[type="text"] {
+  width: 100%; /* Ancho completo */
+  padding: 15px; /* Espaciado interno */
+  border: 1px solid #ced4da; /* Borde */
+  margin-bottom: 20px; /* Margen inferior */
+  box-sizing: border-box; /* Caja de borde que incluye el relleno */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para el select dropdown */
+.select-css {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  padding: .4em 1.4em .3em .8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.select-css::-ms-expand {
+  display: none;
+}
+
+.select-css:hover {
+  border-color: #888;
+}
+
+.select-css:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+  color: #222;
+  outline: none;
+}
+
+.select-css option {
+  font-weight: normal;
+}
+
+/* Estilos para la imagen de icono en la página */
+.icon-container {
+  position: absolute; /* Posiciona la imagen en relación con el body */
+  top: 20px; /* Ajusta la posición desde la parte superior */
+  left: 20px; /* Ajusta la posición desde la izquierda */
+  z-index: 1; /* Asegura que la imagen esté encima de otros elementos */
+}
+
+.icon-image {
+  width: 180px; /* Ajusta el tamaño de la imagen */
+  height: 200px; /* Ajusta la altura de la imagen */
+  border-radius: 50%; /* Hace la imagen redonda */
+  border: 2px solid #1d4ed8; /* Borde azul */
+}
+
+
+ /* Estilo del pie de página */
+footer {
+  background-color: #ffffff; /* Fondo blanco para el pie de página */
+  color: #333; /* Color de texto oscuro para legibilidad */
+  padding: 0px; /* Ajusta el padding según tus necesidades */
+  border-top: 1px solid #ddd; /* Borde gris claro en la parte superior */
+  text-align: center;
+  position: fixed; /* Fija el pie de página en la parte inferior */
+  bottom: 0;
+  width: 100%;
+}
+
+.social-links {
+  margin: 20px 30;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #333;
+  font-size: 24px;
+}

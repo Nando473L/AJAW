@@ -4,12 +4,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Entorno
-.env
-
-# Directorios de entorno
-env/
-
 # Configuración local de editores
 .vscode/
 
@@ -28,13 +22,4 @@ yarn-error.log*
 dist/
 build/
 
-# Archivos de base de datos
-database/*.sqlite
-database/*.db
 
-# Directorios de producción
-public/
-
-# Archivos temporales
-*.tmp
-*.swp

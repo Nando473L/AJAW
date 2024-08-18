@@ -1,0 +1,393 @@
+/* Estilos globales */
+* {
+  margin: 10; /* Establece el margen exterior de todos los elementos a 0 */
+  padding: 10; /* Establece el relleno interior de todos los elementos a 0 */
+  box-sizing: border-box; /* Define el modelo de caja border-box para incluir padding y border en el tamaño total */
+  font-family: 'Roboto', sans-serif; /* Establece la fuente de todos los elementos como Roboto, una fuente sans-serif */
+  color: #555555; /* Establece el color del texto de todos los elementos a un tono de gris (#555555) */
+}
+
+a {
+  text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+  color: inherit; /* Hereda el color del texto de su elemento padre */
+}
+
+/* Estilos para el menú principal */
+.menu {
+  position: relative; /* Posiciona los elementos relativamente para permitir el posicionamiento absoluto de elementos hijos */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el elemento, indicando que es interactivo */
+  margin: 0 10px; /* Establece un margen de 0 en la parte superior e inferior y 10px a la izquierda y derecha */
+}
+
+.menu-title {
+  display: block; /* Muestra el elemento como bloque */
+  width: 200px; /* Establece el ancho del elemento a 200px */
+  height: 40px; /* Establece la altura del elemento a 40px */
+  line-height: 40px; /* Establece la altura de línea igual a la altura del elemento para centrar verticalmente el texto */
+  padding: 0; /* Establece el relleno interior del elemento a 0 */
+  background: #000000; /* Establece el fondo del elemento a negro (#000000) */
+  text-align: center; /* Centra el texto horizontalmente dentro del elemento */
+  color: #ffffff; /* Establece el color del texto a blanco (#ffffff) */
+  font-weight: bold; /* Establece el peso de la fuente a negrita */
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  font-size: 14px; /* Establece el tamaño de la fuente a 14px */
+  border: 1px solid #ffffff; /* Establece un borde blanco de 1px alrededor del elemento */
+  transition: 0.3s background-color; /* Aplica una transición suave de 0.3 segundos al color de fondo */
+}
+
+.menu-title:hover {
+  background: #333333; /* Cambia el color de fondo del elemento a un tono más oscuro de negro (#333333) cuando se pasa el cursor sobre él */
+}
+
+.menu-dropdown {
+  display: none; /* Oculta inicialmente los elementos con clase "menu-dropdown" */
+  position: absolute; /* Posiciona los elementos de forma absoluta con respecto a su primer ancestro posicionado */
+  top: 100%; /* Coloca el elemento 100% del alto del elemento padre */
+  left: 0; /* Coloca el elemento al borde izquierdo del elemento padre */
+  width: 200px; /* Establece el ancho del elemento a 200px */
+  background: #000000; /* Establece el fondo del elemento a negro (#000000) */
+  color: #555555; /* Establece el color del texto a un tono de gris (#555555) */
+  border: 1px solid #ffffff; /* Establece un borde blanco de 1px alrededor del elemento */
+  z-index: 100; /* Establece un índice z alto para que esté por encima de otros elementos */
+}
+
+.menu-dropdown li {
+  padding: 10px; /* Establece un relleno interior de 10px alrededor del contenido de cada elemento <li> */
+  transition: 0.3s background-color; /* Aplica una transición suave de 0.3 segundos al color de fondo */
+  font-size: 12px; /* Establece el tamaño de la fuente a 12px */
+}
+
+.menu-dropdown li:hover {
+  background: #333333; /* Cambia el color de fondo del elemento a un tono más oscuro de negro (#333333) cuando se pasa el cursor sobre él */
+}
+
+.menu-title:hover + .menu-dropdown,
+.menu-dropdown:hover {
+  display: block; /* Muestra los elementos con clase "menu-dropdown" cuando se pasa el cursor sobre "menu-title" o "menu-dropdown" */
+}
+
+.menu-title:hover + .menu-dropdown li,
+.menu-dropdown li:hover {
+  color: #ffffff; /* Cambia el color del texto a blanco (#ffffff) cuando se pasa el cursor sobre los elementos <li> dentro de "menu-dropdown" o sobre "menu-title" y "menu-dropdown" */
+}
+
+/* Estilos para hacer la lista horizontal */
+.hList {
+  list-style: none; /* Elimina el estilo de lista predeterminado */
+  display: flex; /* Establece los elementos como flexibles */
+  justify-content: center; /* Centra horizontalmente los elementos flexibles */
+  align-items: center; /* Centra verticalmente los elementos flexibles */
+  padding: 0; /* Establece el relleno interior de la lista a 0 */
+}
+
+/* Estilos para los botones de Volver y Cerrar Sesión */
+.fb-button {
+  background-color: #4267B2; /* Establece el color de fondo del botón a azul (#4267B2) */
+  border-color: #4267B2; /* Establece el color del borde del botón a azul (#4267B2) */
+  color: white; /* Establece el color del texto a blanco */
+  font-weight: bold; /* Establece el peso de la fuente a negrita */
+  border-radius: 5px; /* Establece un radio de borde de 5px para esquinas redondeadas */
+  padding: 10px 20px; /* Establece el relleno interior del botón a 10px arriba y abajo, y 20px a los lados */
+  transition: background-color 0.3s, border-color 0.3s; /* Aplica una transición suave de 0.3 segundos al color de fondo y borde */
+  margin: 0 5px; /* Establece un margen de 0 a los lados (izquierda y derecha) de 5px */
+}
+
+.fb-button:hover {
+  background-color: #365899; /* Cambia el color de fondo del botón a un tono más oscuro de azul (#365899) cuando se pasa el cursor sobre él */
+  border-color: #365899; /* Cambia el color del borde del botón a un tono más oscuro de azul (#365899) cuando se pasa el cursor sobre él */
+  text-decoration: none; /* Elimina cualquier subrayado del texto del botón */
+  color: white; /* Mantiene el color del texto como blanco */
+}
+
+.fb-button i {
+  margin-right: 5px; /* Establece un margen a la derecha de 5px para elementos <i> dentro de "fb-button" */
+}
+
+.btn-getstarted:hover {
+  background-color: #333333; /* Cambia el color de fondo del botón a un tono más oscuro de negro (#333333) cuando se pasa el cursor sobre él */
+}
+
+/* Animación para la imagen */
+#hero-animated .container {
+  margin-bottom: 80px; /* Establece un margen inferior de 80px para el contenedor dentro de "hero-animated" */
+  display: flex; /* Establece el contenedor como flexible */
+  justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+  align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+  text-align: center; /* Centra horizontalmente el texto dentro del contenedor */
+  height: 60vh; /* Establece la altura del contenedor al 50% de la altura visible del navegador */
+}
+
+#hero-animated .container img {
+  max-width: 100%; /* Establece el ancho máximo de la imagen al 100% del contenedor */
+  height: auto; /* Permite que la altura de la imagen se ajuste automáticamente para mantener la proporción */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Define los puntos clave de la animación para mover la imagen verticalmente */
+  }
+  40% {
+    transform: translateY(-20px); /* Mueve la imagen hacia arriba 20px en el 40% de la animación */
+  }
+  60% {
+    transform: translateY(-10px); /* Mueve la imagen hacia arriba 10px en el 60% de la animación */
+  }
+}
+
+/* Estilos para la sección de servicios destacados */
+/* Estilos para los elementos de servicio */
+.service-item {
+  position: relative;
+  background-color: #ffffff; /* Color de fondo inicial */
+  border: 5px solid #cccccc; /* Borde del elemento */
+  padding: 20px; /* Espaciado interior */
+  transition: background-color 2s; /* Transición suave del color de fondo */
+}
+
+.service-item:hover {
+  background-color: #aaaaaa; /* Cambia el color de fondo al pasar el cursor */
+}
+
+.service-item .icon {
+  margin-bottom: 10px; /* Espaciado inferior para el ícono */
+}
+
+.service-item h4 {
+  margin-bottom: 10; /* Elimina el margen inferior del título */
+}
+
+.service-item a {
+  color: inherit; /* Hereda el color del texto */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+#footer p {
+  margin-bottom: 0; /* Elimina el margen inferior predeterminado del párrafo dentro del footer */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para la sección Acerca de nosotros todo lo que sigue despues de la imagen central carruzel y poliza*/
+#about {
+  background-color: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#about .section-header {
+  margin-bottom: 30px;
+}
+
+#about h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #007bff; /* Azul */
+}
+
+#about p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+#about strong {
+  color: #007bff; /* Azul */
+}
+
+/* Estilos para la sección de Servicios */
+#services {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#services .section-header {
+  margin-bottom: 30px;
+}
+
+#services h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #007bff; /* Azul */
+}
+
+#services .service-item {
+  background-color: #ffffff;
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#services .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.5); /* Sombra azul */
+}
+
+#services .service-item .icon i {
+  font-size: 36px;
+  color: #007bff; /* Azul */
+}
+
+#services .service-item h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+#services .service-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+/* Estilos para la sección de Contacto */
+#contact {
+  padding: 80px 0;
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+}
+
+#contact .section-header {
+  margin-bottom: 30px;
+}
+
+#contact h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #007bff; /* Azul */
+}
+
+#contact p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+#contact .info {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#contact .info i {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+#contact .social-links a {
+  font-size: 24px;
+  display: inline-block;
+  background: #ffffff;
+  color: #333333;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#contact .social-links a:hover {
+  background-color: #007bff; /* Azul */
+  color: #ffffff;
+}
+
+
+
+
+
+
+
+
+/*SERVICIOS en adelante*/
+
+.hero-animated .btn-get-started {
+  font-size: 16px;
+  font-weight: 400;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: var(--color-white);
+  background: var(--color-primary);
+  font-family: var(--font-secondary);
+}
+
+.hero-animated .btn-get-started:hover {
+  background: rgba(var(--color-primary-rgb), 0.8);
+}
+
+.hero-animated .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  font-family: var(--font-secondary);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.hero-animated .btn-watch-video i {
+  color: var(--color-primary);
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.hero-animated .btn-watch-video:hover {
+  color: var(--color-primary);
+}
+
+.hero-animated .btn-watch-video:hover i {
+  color: rgba(var(--color-primary-rgb), 0.8);
+}
+
+@media (max-width: 640px) {
+  .hero-animated h2 {
+    font-size: 32px;
+  }
+
+  .hero-animated p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .hero-animated .btn-get-started,
+  .hero-animated .btn-watch-video {
+    font-size: 14px;
+  }
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
